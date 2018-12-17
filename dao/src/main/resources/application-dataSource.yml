@@ -1,0 +1,13 @@
+datasource: ${datasource}
+spring:
+  datasource:
+    druid:
+      password: ${spring.datasource.password}
+      driver-class-name: ${spring.datasource.driver-class-name}
+      url: ${spring.datasource.url}
+      username: ${spring.datasource.username}
+      type: ${spring.datasource.type}
+
+
+mybatis:
+  mapper-locations: classpath*:sqlmap/*.xml
