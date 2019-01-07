@@ -1,2 +1,18 @@
 server:
   port: 8030
+
+datasource: Mysql
+
+spring:
+  datasource:
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:
+    username:
+    type: com.alibaba.druid.pool.DruidDataSource
+
+sql:
+  encoding:
+    enabled: true
+
+publicKey:

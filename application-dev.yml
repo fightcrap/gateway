@@ -11,3 +11,10 @@ spring:
     url:
     username:
     type: com.alibaba.druid.pool.DruidDataSource
+
+
+sql:
+  encoding:
+    enabled: true
+
+publicKey:
