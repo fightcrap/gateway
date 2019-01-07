@@ -27,6 +27,8 @@
         <project.api.version>0.0.1-SNAPSHOT</project.api.version>
         <project.version>0.0.1-SNAPSHOT</project.version>
         <mybatis.version>1.3.2</mybatis.version>
+        <common.version>0.0.1-SNAPSHOT</common.version>
+        <dubbo>2.0.0</dubbo>
     </properties>
 
     <dependencies>
