@@ -71,7 +71,6 @@ public aspect WebRequestLogAspect {
         } catch (Throwable throwable) {
             log.error("system error {}", throwable);
             //如果是内部异常，返回特定结果
-
             return DefaultWebResponse.buildResponse(WebResultCode.SYSTEM_ERROR, null);
         }
     }
