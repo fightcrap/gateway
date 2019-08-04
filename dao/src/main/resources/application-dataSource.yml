@@ -7,10 +7,10 @@ spring:
       url: @spring.datasource.url@
       username: @spring.datasource.username@
       type: @spring.datasource.type@
-      connect-properties: config.decrypt=true;config.decrypt.key=@publickey@
       filter:
         config:
           enabled: @sql.encoding.enabled@
+      connection-properties: config.decrypt=true;config.decrypt.key=@publicKey@
 
 
 
