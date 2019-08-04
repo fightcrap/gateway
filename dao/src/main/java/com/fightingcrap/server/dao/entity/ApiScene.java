@@ -25,7 +25,7 @@ public class ApiScene extends BaseEntity  implements Serializable {
     private Integer limit;
 
     /**
-     * 限流方式,具体参考枚举值
+     * 限流方式,具体参考枚举值com.fightingcrap.server.api.enums.LimitWayEnum
      */
     private Integer limitWay;
  

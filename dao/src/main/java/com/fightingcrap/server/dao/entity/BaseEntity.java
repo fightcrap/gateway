@@ -36,7 +36,7 @@ public class BaseEntity implements Serializable {
     private Long id;
 
     /**
-     * 状态值,不同类型的状态含义不一致，具体参考具体的枚举
+     * 状态值,不同类型的状态含义不一致，具体参考具体的枚举,通常为com.fightingcrap.server.api.enums.CommonStatusEnum
      */
     private Integer status;
     /**

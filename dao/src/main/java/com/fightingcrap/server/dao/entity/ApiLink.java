@@ -26,7 +26,7 @@ public class ApiLink extends BaseEntity implements Serializable {
      */
     private String name;
     /**
-     * 协议类型，参考枚举
+     * 协议类型，参考枚举 com.fightingcrap.server.api.enums.ProtocolEnum
      */
     private Integer protocol;
     /**
@@ -34,7 +34,7 @@ public class ApiLink extends BaseEntity implements Serializable {
      */
     private Integer limit;
     /**
-     * 限流方式，参考枚举
+     * 限流方式，参考枚举com.fightingcrap.server.api.enums.LimitWayEnum
      */
     private Integer limitWay;
     /**
