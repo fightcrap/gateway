@@ -1,38 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.fightingcrap.server</groupId>
-		<artifactId>gateway</artifactId>
-		<version>1.0.0</version>
-	</parent>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.fightingcrap.server</groupId>
+        <artifactId>gateway</artifactId>
+        <version>1.0.0</version>
+    </parent>
 
-	<groupId>com.fightingcrap.server</groupId>
-	<artifactId>gateway-service</artifactId>
-	<version>${project.version}</version>
-	<name>service</name>
-	<description>base service for project</description>
+    <groupId>com.fightingcrap.server</groupId>
+    <artifactId>gateway-service</artifactId>
+    <version>${project.version}</version>
+    <name>service</name>
+    <description>base service for project</description>
 
-	<properties>
-		<maven.deploy.skip>true</maven.deploy.skip>
-		<maven.install.skip>true</maven.install.skip>
-	</properties>
+    <properties>
+        <maven.deploy.skip>true</maven.deploy.skip>
+        <maven.install.skip>true</maven.install.skip>
+    </properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.fightingcrap.server</groupId>
-			<artifactId>dao</artifactId>
-			<version>${project.version}</version>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>com.fightingcrap.server</groupId>
+            <artifactId>dao</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
-		<dependency>
-			<groupId>com.fightingcrap.server</groupId>
-			<artifactId>common</artifactId>
-			<version>${common.version}</version>
-		</dependency>
-		
-	</dependencies>
+        <dependency>
+            <groupId>com.fightingcrap.server</groupId>
+            <artifactId>common</artifactId>
+            <version>${common.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
 
 
 </project>
