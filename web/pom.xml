@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.fightingcrap.server</groupId>
     <artifactId>gateway-web</artifactId>
-    <version>${model.version}</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>web</name>
     <description>gateway</description>
     <packaging>jar</packaging>

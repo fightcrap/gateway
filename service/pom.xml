@@ -10,14 +10,8 @@
 
     <groupId>com.fightingcrap.server</groupId>
     <artifactId>gateway-service</artifactId>
-    <version>${model.version}</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>service</name>
-    <description>base service for project</description>
-
-    <properties>
-        <maven.deploy.skip>true</maven.deploy.skip>
-        <maven.install.skip>true</maven.install.skip>
-    </properties>
 
     <dependencies>
         <dependency>

@@ -10,7 +10,7 @@
 
     <groupId>com.fightingcrap.server</groupId>
     <artifactId>gateway-impl</artifactId>
-    <version>${model.version}</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>impl</name>
 
     <properties>
@@ -19,6 +19,7 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>com.fightingcrap.server</groupId>
             <artifactId>gateway-service</artifactId>

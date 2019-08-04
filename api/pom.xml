@@ -11,7 +11,7 @@
 
     <groupId>com.fightingcrap.server</groupId>
     <artifactId>gateway-api</artifactId>
-    <version>${project.api.version}</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>api</name>
     <properties>
