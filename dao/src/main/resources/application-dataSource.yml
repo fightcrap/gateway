@@ -1,16 +1,16 @@
-datasource: ${datasource}
+datasource: @datasource@
 spring:
   datasource:
     druid:
-      password: ${spring.datasource.password}
-      driver-class-name: ${spring.datasource.driver-class-name}
-      url: ${spring.datasource.url}
-      username: ${spring.datasource.username}
-      type: ${spring.datasource.type}
-      connect-properties: config.decrypt=true;config.decrypt.key=${publickey:''}
+      password: @spring.datasource.password@
+      driver-class-name: @spring.datasource.driver-class-name@
+      url: @spring.datasource.url@
+      username: @spring.datasource.username@
+      type: @spring.datasource.type@
+      connect-properties: config.decrypt=true;config.decrypt.key=@publickey@
       filter:
         config:
-          enabled: ${sql.encoding.enabled}
+          enabled: @sql.encoding.enabled@
 
 
 

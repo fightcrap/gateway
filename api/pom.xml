@@ -4,16 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.fightingcrap.server</groupId>
-        <artifactId>spring-boot</artifactId>
+        <artifactId>gateway</artifactId>
         <version>1.0.0</version>
     </parent>
     <groupId>com.fightingcrap.server</groupId>
-    <artifactId>api</artifactId>
+    <artifactId>gateway-api</artifactId>
     <version>${project.api.version}</version>
     <packaging>jar</packaging>
     <name>api</name>
-    <description>Demo project for Spring Boot</description>
-
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -31,8 +29,23 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
         </plugins>
     </build>

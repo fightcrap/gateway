@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.fightingcrap.server</groupId>
-        <artifactId>spring-boot</artifactId>
+        <artifactId>gateway</artifactId>
         <version>1.0.0</version>
     </parent>
     <groupId>com.fightingcrap.server</groupId>
-    <artifactId>web</artifactId>
+    <artifactId>gateway-web</artifactId>
     <version>${project.version}</version>
     <name>web</name>
     <description>gateway</description>
@@ -51,16 +51,9 @@
         </dependency>
 
 
-
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+
+
 
 </project>
