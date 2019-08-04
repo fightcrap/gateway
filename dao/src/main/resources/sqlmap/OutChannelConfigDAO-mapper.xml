@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fightingcrap.server.dao.dao.OutChannelConfigDAO">
+    <resultMap id="result_map" type="com.fightingcrap.server.dao.entity.OutChannelConfig">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="thirdKey" property="thirdKey" jdbcType="VARCHAR"/>
+        <result column="thirdSecret" property="thirdSecret" jdbcType="VARCHAR"/>
+        <result column="source" property="source" jdbcType="VARCHAR"/>
+        <result column="exectInfo" property="exectInfo" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="TINYINT"/>
+        <result column="created" property="created" jdbcType="BIGINT"/>
+        <result column="updated" property="updated" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="base_column">
+      id,thirdKey,thirdSecret,source,exectInfo,status,created,updated
+    </sql>
+
+    <insert id="save" parameterType="com.fightingcrap.server.dao.entity.OutChannelConfig">
+        insert into `outChannelConfig`(
+        <if test='id!=null'>
+            id,
+        </if>
+        <if test='thirdKey!=null'>
+            thirdKey,
+        </if>
+        <if test='thirdSecret!=null'>
+            thirdSecret,
+        </if>
+        <if test='source!=null'>
+            source,
+        </if>
+        <if test='exectInfo!=null'>
+            exectInfo,
+        </if>
+        <if test='status!=null'>
+            status,
+        </if>
+            created,
+            updated
+
+        )
+        VALUES(
+        <if test='id!=null'>
+            id=#{id},
+        </if>
+        <if test='thirdKey!=null'>
+            thirdKey=#{thirdKey},
+        </if>
+        <if test='thirdSecret!=null'>
+            thirdSecret=#{thirdSecret},
+        </if>
+        <if test='source!=null'>
+            source=#{source},
+        </if>
+        <if test='exectInfo!=null'>
+            exectInfo=#{exectInfo},
+        </if>
+        <if test='status!=null'>
+            status=#{status},
+        </if>
+        unix_timestamp(),
+        unix_timestamp()
+
+        )
+    </insert>
+
+    <sql id="base_update_column">
+        <if test='id!=null'>
+            id=#{id},
+        </if>
+        <if test='thirdKey!=null'>
+            thirdKey=#{thirdKey},
+        </if>
+        <if test='thirdSecret!=null'>
+            thirdSecret=#{thirdSecret},
+        </if>
+        <if test='source!=null'>
+            source=#{source},
+        </if>
+        <if test='exectInfo!=null'>
+            exectInfo=#{exectInfo},
+        </if>
+        <if test='status!=null'>
+            status=#{status},
+        </if>
+        updated=unix_timestamp()
+
+
+    </sql>
+
+    <update id="update" parameterType="com.fightingcrap.server.dao.entity.OutChannelConfig">
+        update `outChannelConfig` set
+        <include refid="base_update_column"/>
+        where id=#{id}
+    </update>
+
+    <select id="getById" resultMap="result_map">
+        select
+        <include refid="base_column"/>
+        from
+        outChannelConfig
+        where id =#{id}
+    </select>
+
+    <delete id="deleteById">
+       delete from
+       `outChannelConfig`
+       where id= #{id}
+    </delete>
+</mapper>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fightingcrap.server.dao.dao.AuthApiRelationDAO">
+    <resultMap id="result_map" type="com.fightingcrap.server.dao.entity.AuthApiRelation">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="authId" property="authId" jdbcType="BIGINT"/>
+        <result column="linkId" property="linkId" jdbcType="BIGINT"/>
+        <result column="status" property="status" jdbcType="TINYINT"/>
+        <result column="created" property="created" jdbcType="BIGINT"/>
+        <result column="updated" property="updated" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="base_column">
+      id,authId,linkId,status,created,updated
+    </sql>
+
+    <insert id="save" parameterType="com.fightingcrap.server.dao.entity.AuthApiRelation">
+        insert into `authApiRelation`(
+        <if test='id!=null'>
+            id,
+        </if>
+        <if test='authId!=null'>
+            authId,
+        </if>
+        <if test='linkId!=null'>
+            linkId,
+        </if>
+        <if test='status!=null'>
+            status,
+        </if>
+            created,
+            updated
+        )
+        VALUES(
+        <if test='id!=null'>
+            id=#{id},
+        </if>
+        <if test='authId!=null'>
+            authId=#{authId},
+        </if>
+        <if test='linkId!=null'>
+            linkId=#{linkId},
+        </if>
+        <if test='status!=null'>
+            status=#{status},
+        </if>
+        unix_timestamp(),
+        unix_timestamp()
+        )
+    </insert>
+
+    <sql id="base_update_column">
+        <if test='id!=null'>
+            id=#{id},
+        </if>
+        <if test='authId!=null'>
+            authId=#{authId},
+        </if>
+        <if test='linkId!=null'>
+            linkId=#{linkId},
+        </if>
+        <if test='status!=null'>
+            status=#{status},
+        </if>
+        updated=unix_timestamp()
+
+
+    </sql>
+
+    <update id="update" parameterType="com.fightingcrap.server.dao.entity.AuthApiRelation">
+        update `authApiRelation` set
+        <include refid="base_update_column"/>
+        where id=#{id}
+    </update>
+
+    <select id="getById" resultMap="result_map">
+        select
+        <include refid="base_column"/>
+        from
+        authApiRelation
+        where id =#{id}
+    </select>
+
+    <delete id="deleteById">
+      delete from
+      `authApiRelation`
+      where id= #{id}
+    </delete>
+</mapper>

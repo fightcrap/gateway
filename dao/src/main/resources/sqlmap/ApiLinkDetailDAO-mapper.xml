@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fightingcrap.server.dao.dao.ApiLinkDetailDAO">
+
+    <resultMap id="result_map" type="com.fightingcrap.server.dao.entity.ApiLinkDetail">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="linkId" property="linkId" jdbcType="BIGINT"/>
+        <result column="pipeName" property="pipeName" jdbcType="VARCHAR"/>
+        <result column="param" property="param" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="TINYINT"/>
+        <result column="created" property="created" jdbcType="BIGINT"/>
+        <result column="updated" property="updated" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="base_column">
+      id,linkId,pipeName,param,status,created,updated
+    </sql>
+
+    <insert id="save" parameterType="com.fightingcrap.server.dao.entity.ApiLinkDetail">
+        insert into `apiLinkDetail`(
+        <if test='id!=null'>
+            id,
+        </if>
+        <if test='linkId!=null'>
+            linkId,
+        </if>
+        <if test='pipeName!=null'>
+            pipeName,
+        </if>
+        <if test='param!=null'>
+            param,
+        </if>
+        <if test='status!=null'>
+            status,
+        </if>
+        created,
+        updated
+        )
+        VALUES(
+        <if test='id!=null'>
+            id=#{id},
+        </if>
+        <if test='linkId!=null'>
+            linkId=#{linkId},
+        </if>
+        <if test='pipeName!=null'>
+            pipeName=#{pipeName},
+        </if>
+        <if test='param!=null'>
+            param=#{param},
+        </if>
+        <if test='status!=null'>
+            status=#{status},
+        </if>
+        unix_timestamp(),
+        unix_timestamp()
+
+        )
+    </insert>
+
+    <sql id="base_update_column">
+        <if test='id!=null'>
+            id=#{id},
+        </if>
+        <if test='linkId!=null'>
+            linkId=#{linkId},
+        </if>
+        <if test='pipeName!=null'>
+            pipeName=#{pipeName},
+        </if>
+        <if test='param!=null'>
+            param=#{param},
+        </if>
+        <if test='limit!=null'>
+            limit=#{limit},
+        </if>
+        <if test='status!=null'>
+            status=#{status},
+        </if>
+        updated=unix_timestamp()
+
+
+    </sql>
+
+    <update id="update" parameterType="com.fightingcrap.server.dao.entity.ApiLinkDetail">
+        update `apiLinkDetail` set
+        <include refid="base_update_column"/>
+        where id=#{id}
+    </update>
+
+    <select id="getById" resultMap="result_map">
+        select
+        <include refid="base_column"/>
+        from
+        apiLinkDetail
+        where id =#{id}
+    </select>
+
+    <delete id="deleteById">
+      delete from
+      `apiLinkDetail`
+      where id= #{id}
+    </delete>
+</mapper>

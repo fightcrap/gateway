@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fightingcrap.server.dao.dao.ApiLinkDAO">
+
+    <resultMap id="result_map" type="com.fightingcrap.server.dao.entity.ApiLink">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="outConfigId" property="outConfigId" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="protocol" property="protocol" jdbcType="TINYINT"/>
+        <result column="limit" property="limit" jdbcType="INT"/>
+        <result column="limitWay" property="limitWay" jdbcType="TINYINT"/>
+        <result column="cacheTime" property="cacheTime" jdbcType="INT"/>
+        <result column="sceneId" property="sceneId" jdbcType="BIGINT"/>
+        <result column="status" property="status" jdbcType="TINYINT"/>
+        <result column="created" property="created" jdbcType="BIGINT"/>
+        <result column="updated" property="updated" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="base_column">
+      id,outConfigId,name,protocol,`limit`,limitWay,cacheTime,sceneId,status,created,updated
+    </sql>
+
+    <insert id="save" parameterType="com.fightingcrap.server.dao.entity.ApiLink">
+        insert into `apiLink`(
+        <if test='id!=null'>
+            id,
+        </if>
+        <if test='outConfigId!=null'>
+            outConfigId,
+        </if>
+        <if test='name!=null'>
+            name,
+        </if>
+        <if test='protocol!=null'>
+            protocol,
+        </if>
+        <if test='limit!=null'>
+            `limit`,
+        </if>
+        <if test='limitWay!=null'>
+            limitWay,
+        </if>
+        <if test='cacheTime!=null'>
+            cacheTime,
+        </if>
+        <if test='sceneId!=null'>
+            sceneId,
+        </if>
+        <if test='status!=null'>
+            status,
+        </if>
+        created,
+        updated
+        )
+        VALUES(
+        <if test='id!=null'>
+            #{id},
+        </if>
+        <if test='outConfigId!=null'>
+            #{outConfigId},
+        </if>
+        <if test='name!=null'>
+            #{name},
+        </if>
+        <if test='protocol!=null'>
+            #{protocol},
+        </if>
+        <if test='limit!=null'>
+            #{limit},
+        </if>
+        <if test='limitWay!=null'>
+            #{limitWay},
+        </if>
+        <if test='cacheTime!=null'>
+            #{cacheTime},
+        </if>
+        <if test='sceneId!=null'>
+            #{sceneId},
+        </if>
+        <if test='status!=null'>
+            #{status},
+        </if>
+        unix_timestamp(),
+        unix_timestamp()
+        )
+    </insert>
+
+    <sql id="base_update_column">
+        <if test='id!=null'>
+            id=#{id},
+        </if>
+        <if test='outConfigId!=null'>
+            outConfigId=#{outConfigId},
+        </if>
+        <if test='name!=null'>
+            name=#{name},
+        </if>
+        <if test='protocol!=null'>
+            protocol=#{protocol},
+        </if>
+        <if test='limit!=null'>
+            limit=#{limit},
+        </if>
+        <if test='limitWay!=null'>
+            limitWay=#{limitWay},
+        </if>
+        <if test='cacheTime!=null'>
+            cacheTime=#{cacheTime},
+        </if>
+        <if test='sceneId!=null'>
+            sceneId=#{sceneId},
+        </if>
+        <if test='status!=null'>
+            status=#{status},
+        </if>
+            updated=unix_timestamp()
+
+    </sql>
+
+    <update id="update" parameterType="com.fightingcrap.server.dao.entity.ApiLink">
+        update `apiLink` set
+        <include refid="base_update_column"/>
+        where id=#{id}
+    </update>
+
+    <select id="getById" resultMap="result_map">
+        select
+        <include refid="base_column"/>
+        from
+        apiLink
+        where id =#{id}
+    </select>
+
+    <delete id="deleteById">
+      delete from
+      `apiLink`
+      where id= #{id}
+    </delete>
+</mapper>
