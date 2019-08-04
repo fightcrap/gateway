@@ -8,9 +8,9 @@
         <result column="outConfigId" property="outConfigId" jdbcType="BIGINT"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
         <result column="protocol" property="protocol" jdbcType="TINYINT"/>
-        <result column="limit" property="limit" jdbcType="INT"/>
+        <result column="limit" property="limit" jdbcType="INTEGER"/>
         <result column="limitWay" property="limitWay" jdbcType="TINYINT"/>
-        <result column="cacheTime" property="cacheTime" jdbcType="INT"/>
+        <result column="cacheTime" property="cacheTime" jdbcType="INTEGER"/>
         <result column="sceneId" property="sceneId" jdbcType="BIGINT"/>
         <result column="status" property="status" jdbcType="TINYINT"/>
         <result column="created" property="created" jdbcType="BIGINT"/>

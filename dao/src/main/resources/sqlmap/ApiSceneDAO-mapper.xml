@@ -5,7 +5,7 @@
     <resultMap id="result_map" type="com.fightingcrap.server.dao.entity.ApiScene">
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
-        <result column="limit" property="limit" jdbcType="INT"/>
+        <result column="limit" property="limit" jdbcType="INTEGER"/>
         <result column="limitWay" property="limitWay" jdbcType="TINYINT"/>
         <result column="status" property="status" jdbcType="TINYINT"/>
         <result column="created" property="created" jdbcType="BIGINT"/>
