@@ -10,9 +10,8 @@
 
     <groupId>com.fightingcrap.server</groupId>
     <artifactId>gateway-impl</artifactId>
-    <version>${project.version}</version>
+    <version>${model.version}</version>
     <name>impl</name>
-    <description>api impl server</description>
 
     <properties>
         <maven.deploy.skip>true</maven.deploy.skip>
@@ -22,20 +21,17 @@
     <dependencies>
         <dependency>
             <groupId>com.fightingcrap.server</groupId>
-            <artifactId>service</artifactId>
-            <version>${project.version}</version>
+            <artifactId>gateway-service</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.fightingcrap.server</groupId>
-            <artifactId>api</artifactId>
-            <version>${project.version}</version>
+            <artifactId>gateway-api</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.alibaba.spring.boot</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>${dubbo}</version>
         </dependency>
 
     </dependencies>

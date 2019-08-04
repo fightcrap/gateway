@@ -10,7 +10,7 @@
 
     <groupId>com.fightingcrap.server</groupId>
     <artifactId>gateway-service</artifactId>
-    <version>${project.version}</version>
+    <version>${model.version}</version>
     <name>service</name>
     <description>base service for project</description>
 
@@ -22,14 +22,12 @@
     <dependencies>
         <dependency>
             <groupId>com.fightingcrap.server</groupId>
-            <artifactId>dao</artifactId>
-            <version>${project.version}</version>
+            <artifactId>gateway-dao</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.fightingcrap.server</groupId>
-            <artifactId>common</artifactId>
-            <version>${common.version}</version>
+            <artifactId>gateway-common</artifactId>
             <exclusions>
                 <exclusion>
                     <groupId>org.slf4j</groupId>

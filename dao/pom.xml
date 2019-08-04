@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.fightingcrap.server</groupId>
     <artifactId>gateway-dao</artifactId>
-    <version>${project.version}</version>
+    <version>${model.version}</version>
     <name>dao</name>
 
     <properties>
@@ -28,13 +28,11 @@
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${mybatis.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.9</version>
         </dependency>
 
 
