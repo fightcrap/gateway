@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @SpringBootApplication
 @MapperScan(value = "com.fightingcrap.server.dao.*")
 @ComponentScan(basePackages = "com.fightingcrap.server.*")
-@EnableDubbo(scanBasePackages = "com.fightingcrap.server.impl.*")
+@EnableDubboConfiguration
 @EnableWebMvc
 public class WebApplication {
 

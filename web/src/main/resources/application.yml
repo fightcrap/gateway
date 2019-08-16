@@ -5,3 +5,16 @@ spring:
   profiles:
     include: dataSource
     active: @env@
+  application:
+    name: gateway
+  dubbo:
+    server: true
+    application:
+      name: service-impl
+    registry:
+      address: @dubbo.zk.address@
+    protocol:
+      name: dubbo
+      port: @dubbo.port@
+    scan:
+      basePackages: com.fightingcrap.server.impl.impl
