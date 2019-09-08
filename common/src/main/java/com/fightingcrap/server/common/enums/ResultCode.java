@@ -32,7 +32,14 @@ public enum ResultCode {
     PARAM_ERROR(999998,"参数异常","param error"),
     IDEMPOTENT(999997, "幂等性异常", "Idempotent anomaly"),
     DB_EXCEPTION(
-            999996, "数据库异常", "db error");
+            999996, "数据库异常", "db error"),
+
+    /**
+     * 限流相关服务异常
+     */
+    LIMIT_WAY_IS_NULL(800001,"限流类型为null")
+
+    ;
 
     /**
      * 状态码

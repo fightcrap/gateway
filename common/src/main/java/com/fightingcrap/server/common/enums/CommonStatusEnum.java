@@ -1,4 +1,4 @@
-package com.fightingcrap.server.api.enums;
+package com.fightingcrap.server.common.enums;
 
 /**
  * Create By fightingcrap On 2019/08/04

@@ -1,4 +1,4 @@
-package com.fightingcrap.server.api.enums;
+package com.fightingcrap.server.common.enums;
 
 /**
  * Create By fightingcrap On 2019/08/04
@@ -16,21 +16,23 @@ package com.fightingcrap.server.api.enums;
  * |  (((__) (__)))    程序镇压神兽，排查一切bug。
  * |
  * |
- * | ProtocolEnum -- 协议枚举
+ * | LimitWayEnum --限流方式枚举
  * |
  * | @author fightingcrap
  **/
-public enum ProtocolEnum {
+public enum  LimitWayEnum {
 
-    HTTPS(0,"http/https协议"),
-
-    WEB_SOCKET(1,"webSocket协议");
+    NONE(0,"不限制"),
+    SINGLE_COUNTER_BUCKET(1,"单机版计数器法"),
+    SINGLE_TOKEN_BUCKET(2,"单机版令牌法"),
+    DISTRIBUTED_COUNTER_BUCKET(3,"分布式漏桶法"),
+    DISTRIBUTED_TOKEN_BUCKET(4,"分布式令牌法");
 
     private int value;
 
     private String message;
 
-    ProtocolEnum(int value, String message) {
+    LimitWayEnum(int value, String message) {
         this.value = value;
         this.message = message;
     }
