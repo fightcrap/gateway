@@ -37,25 +37,30 @@ public class SingleTokenLimitWayServerImpl implements LimitWayService {
 
 
     @Override
-    public double getLimitToken(String name) {
+    public double getLimitToken(String name, Integer limit) {
 
-        return getLimitToken(name, TimeUnit.SECONDS, LimitWayConstants.DEFAULT_LIMIT_RATE);
+        return getLimitToken(name, TimeUnit.SECONDS, 1, limit);
     }
 
     @Override
-    public double getLimitToken(String name, TimeUnit timeUnit, int time) {
-        return 0;
+    public double getLimitToken(String name, TimeUnit timeUnit, int time, Integer limit) {
+        double limitTime = (limit == null ? LimitWayConstants.DEFAULT_LIMIT_RATE : limit) / timeUnit.toSeconds(time);
+        RateLimiter rateLimiter = getRateLimiter(name, limitTime);
+
+        return rateLimiter.acquire();
     }
 
 
     @Override
-    public boolean tryGetLimitToken(String name) {
-        return tryGetLimitToken(name, TimeUnit.SECONDS, LimitWayConstants.DEFAULT_LIMIT_RATE);
+    public boolean tryGetLimitToken(String name, Integer limit) {
+        return tryGetLimitToken(name, TimeUnit.MINUTES, 1, limit);
     }
 
     @Override
-    public boolean tryGetLimitToken(String name, TimeUnit timeUnit, int time) {
-        return false;
+    public boolean tryGetLimitToken(String name, TimeUnit timeUnit, int time, Integer limit) {
+        double limitTime = (limit == null ? LimitWayConstants.DEFAULT_LIMIT_RATE : limit) / timeUnit.toSeconds(time);
+        RateLimiter rateLimiter = getRateLimiter(name, limitTime);
+        return rateLimiter.tryAcquire();
     }
 
 
