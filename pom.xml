@@ -32,7 +32,7 @@
         <dubbo>2.0.0</dubbo>
         <resource.delimiter>@</resource.delimiter>
         <druid.version>1.1.9</druid.version>
-        <json.version>1.2.47</json.version>
+        <json.version>1.2.83</json.version>
         <guava.version>26.0-jre</guava.version>
     </properties>
 
